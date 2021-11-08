@@ -8,10 +8,10 @@ OBJS = timing.o
 
 # make and compile
 reduce:$(OBJS) $(GPUOBJS)
-	$(NVCC) -o reduce $(OBJS) $(GPUOBJS) 
+	$(NVCC) -arch=sm_52 -o reduce $(OBJS) $(GPUOBJS) 
 
 reduce.o: reduce.cu
-	$(NVCC) -arch=sm_52 -c reduce.cu 
+	$(NVCC) -arch=sm_52 -fPIC -c reduce.cu 
 
 timing.o: timing.c
 	$(CXX) -c timing.c
