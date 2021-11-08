@@ -11,7 +11,7 @@ reduce:$(OBJS) $(GPUOBJS)
 	$(NVCC) -arch=sm_52 -o reduce $(OBJS) $(GPUOBJS)
 
 reduce.o: reduce.cu
-	$(NVCC) -arch=sm_52 -no-pie -c reduce.cu 
+	$(NVCC) -arch=sm_52 -c reduce.cu 
 
 timing.o: timing.c
 	$(CXX) -c timing.c
